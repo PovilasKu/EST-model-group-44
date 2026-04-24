@@ -5,7 +5,7 @@
 
 timeUnit   = 's';
 
-supplyFile = "Team44_supply.cvs";
+supplyFile = "Team44_supply.csv";
 supplyUnit = "kW";
 
 % load the supply data
