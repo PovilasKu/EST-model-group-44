@@ -6,20 +6,20 @@
 timeUnit   = 's';
 
 supplyFile = "Team44_supply.csv";
-supplyUnit = "kW";
+supplyUnit = "MW";
 
 % load the supply data
 Supply = loadSupplyData(supplyFile, timeUnit, supplyUnit);
 
 demandFile = "Team44_demand.csv";
-demandUnit = "kW";
+demandUnit = "MW";
 
 % load the demand data
 Demand = loadDemandData(demandFile, timeUnit, demandUnit);
 
 %% Simulation settings
 
-deltat = 5*unit("min");
+deltat = 15*unit("min");
 stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 %% System parameters
@@ -31,9 +31,9 @@ aSupplyTransport = 0.01; % Dissipation coefficient
 aInjection = 0.1; % Dissipation coefficient
 
 % storage system
-EStorageMax     = 10.*unit("kWh"); % Maximum energy
-EStorageMin     = 0.0*unit("kWh"); % Minimum energy
-EStorageInitial = 2.0*unit("kWh"); % Initial energy
+EStorageMax     = 10.*unit("MWh"); % Maximum energy
+EStorageMin     = 0.0*unit("MWh"); % Minimum energy
+EStorageInitial = 2.0*unit("MWh"); % Initial energy
 bStorage        = 1e-6/unit("s");  % Storage dissipation coefficient
 
 % extraction system
