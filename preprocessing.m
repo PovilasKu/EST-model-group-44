@@ -31,12 +31,12 @@ aSupplyTransport = 0.01; % Dissipation coefficient
 aInjection = 0.0; % Dissipation coefficient
 
 % storage system
-EStorageMax     = 10.*unit("MWh"); % Maximum energy
+EStorageMax     = 107.*unit("MWh"); % Maximum energy
 EStorageMin     = 0.0*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
-ro = 1000; % density of tank liquid
+ro = 997; % density of tank liquid
 c = 4184; % heat capacity of tank liquid
-dT = 60; % temperature difference tank and outside
+dT = 77; % temperature difference tank and outside
 x = 0.2; % shell thickness
 d = 0.3; % insulation thickness
 hw = 500; % convective heat transfer coeficient of water
