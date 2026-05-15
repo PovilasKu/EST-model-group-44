@@ -44,15 +44,15 @@ sig = 5.67e-8; % stephan boltzman constant
 
 %Thermal coeficients and thicknesses
 hw = 500; % convective heat transfer coeficient of water range:50-3000
-ha = 200; % convective heat transfer coeficient of air range: 10-500
+ha = 50; % convective heat transfer coeficient of air range: 10-500
 ks = 15; % conductive heat transfer coeficient of steel 
 ki = 0.05; % conductive heat transfer coeficient of insulation range:0.02-0.05
 kg = 1; % conductive heat transfer coeficient of ground
 x = 0.2; % shell thickness range: 0.1-1
 d = 0.3; % insulation thickness range: 0-1
-eps = 0.9; % emissivity of insulating material 0.8-0.95
+eps = 0.1; % emissivity of outside material 0.05-0.95
 Ta = 15; % Temperature of air
-Ts = 90; % surface temperature of tank
+Ts = 90; % surface temperature of tank 
 hr = (sig*eps*(Ts+Ta)*(Ts^2+Ta^2)); % coeficient of the radiation loss
 
 %Geometry
