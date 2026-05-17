@@ -39,7 +39,7 @@ EStorageInitial = 0.0*unit("MWh"); % Initial energy
 %Tank parameters
 ro = 997; % density of tank liquid
 c = 4184; % heat capacity of tank liquid
-dT = 77; % temperature difference tank and outside range: 67-77
+dT = 75; % temperature difference tank and outside range: 67-77
 sig = 5.67e-8; % stephan boltzman constant 
 
 %Thermal coeficients and thicknesses
@@ -47,13 +47,13 @@ hw = 500; % convective heat transfer coeficient of water range:50-3000
 ha = 50; % convective heat transfer coeficient of air range: 10-500
 ks = 15; % conductive heat transfer coeficient of steel 
 ki = 0.05; % conductive heat transfer coeficient of insulation range:0.02-0.05
-kg = 1; % conductive heat transfer coeficient of ground
+hg = 1; % convective heat transfer coeficient of ground
 x = 0.2; % shell thickness range: 0.1-1
 d = 0.3; % insulation thickness range: 0-1
 eps = 0.1; % emissivity of outside material 0.05-0.95
 Ta = 15; % Temperature of air
 Ts = 90; % surface temperature of tank 
-hr = (sig*eps*(Ts+Ta)*(Ts^2+Ta^2)); % coeficient of the radiation loss
+hr = (sig*eps*(Ts+273+Ta+273)*((Ts+273)^2+(Ta+273)^2)); % coeficient of the radiation loss
 
 %Geometry
 V = EStorageMax/(ro*c*dT); % volume of the tank 
@@ -66,7 +66,7 @@ A2 = 4*pi*r2^2; % outer area of the tank
 Rb = (1/(hw*Ai)); % resistance of water to steel 
 Rs = (1/(4*pi*ks))*((1/ri)-(1/(ri+x))); % resistance of the steel layer
 Ri = (1/(4*pi*ki))*((1/(ri+x))-(1/(r2))); % resistance of the insulation layer
-Rc = (1/(kg*A2)); % resistance of the ground
+Rc = (1/(hg*A2)); % resistance of the ground
 Rsur = 0*(1/((hr+ha)*A2)); % Resistance of the surface when sphere is outside
 Rt = Rb+Rs+Ri+Rc+Rsur; % total resitance
 
