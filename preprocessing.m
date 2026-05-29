@@ -37,34 +37,34 @@ EStorageMin     = 0.0*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
-ro = 997*unit("kg/(m^3)"); % density of tank liquid
-c = 4184*unit("J/(Kg*K)"); % heat capacity of tank liquid
-Tmax = 363.15*unit("K"); 
-Tground = 285.15*unit("K");
-Twater = 285.15*unit("K");
+ro = 997; % density of tank liquid
+c = 4184; % heat capacity of tank liquid
+Tmax = 363.15; 
+Tground = 285.15;
+Twater = 285.15;
 
 %Thermal coeficients and thicknesses
-ha = 50*unit("W/(m^2*K)"); % convective heat transfer coeficient of air range: 10-500
-ks = 15*unit("W/(m*K)"); % conductive heat transfer coeficient of steel 
-ki = 0.05*unit("W/(m*K)"); % conductive heat transfer coeficient of insulation range:0.02-0.05
-kg = 1*unit("W/(m*K)"); % conductive heat transfer coeficient of ground
-x = 0.2*unit("m"); % shell thickness range: 0.1-1
-d = 0.1*unit("m"); % insulation thickness range: 0.05-1
+ha = 50; % convective heat transfer coeficient of air range: 10-500
+ks = 15; % conductive heat transfer coeficient of steel 
+ki = 0.05; % conductive heat transfer coeficient of insulation range:0.02-0.05
+kg = 1; % conductive heat transfer coeficient of ground
+x = 0.2; % shell thickness range: 0.1-1
+d = 0.1; % insulation thickness range: 0.05-1
 
 
 %Geometry
-V = ((EStorageMax*3.6e9)/(ro*c*(Tmax-Tground)))*unit("m^3"); % volume of the tank 
-r1 = ((3*V)/(4*pi))^(1/3)*unit("m"); % inner radius of the tank
-r2 = (r1+x)*unit("m"); % radius of the tank + steel layer
-r3 = (r2+d)*unit("m"); % radius of the tank + steel + insulation layer
-rinf = 20*unit("m"); % radius of the infinite ground
+V = ((EStorageMax*3.6e9)/(ro*c*(Tmax-Tground))); % volume of the tank 
+r1 = ((3*V)/(4*pi))^(1/3); % inner radius of the tank
+r2 = (r1+x); % radius of the tank + steel layer
+r3 = (r2+d); % radius of the tank + steel + insulation layer
+rinf = 20; % radius of the infinite ground
 
 %Resistances
-Rs = ((1/(4*pi*ks))*((1/r1)-(1/(r2))))*unit("K/W"); % resistance of the steel layer
-Ri = ((1/(4*pi*ki))*((1/(r2))-(1/(r3))))*unit("K/W"); % resistance of the insulation layer
-Rc = ((1/(4*pi*kg))*((1/r3)-(1/rinf)))*unit("K/W"); % resistance of the ground
-Ra = (0*(1/(4*pi*ha*r3)))*unit("K/W"); % Resistance of the surface when sphere is outside
-Rt = (Rs+Ri+Rc+Ra)*unit("K/W"); % total resitance
+Rs = ((1/(4*pi*ks))*((1/r1)-(1/(r2)))); % resistance of the steel layer
+Ri = ((1/(4*pi*ki))*((1/(r2))-(1/(r3)))); % resistance of the insulation layer
+Rc = ((1/(4*pi*kg))*((1/r3)-(1/rinf))); % resistance of the ground
+Ra = (0*(1/(4*pi*ha*r3))); % Resistance of the surface when sphere is outside
+Rt = (Rs+Ri+Rc+Ra); % total resitance
 
 %Storage dissipation coeficcient
 bStorage = (1/(ro*V*c*Rt))/unit("s");  % Storage dissipation coefficient
