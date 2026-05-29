@@ -57,7 +57,7 @@ V = ((EStorageMax*3.6e9)/(ro*c*(Tmax-Tground))); % volume of the tank
 r1 = ((3*V)/(4*pi))^(1/3); % inner radius of the tank
 r2 = (r1+x); % radius of the tank + steel layer
 r3 = (r2+d); % radius of the tank + steel + insulation layer
-rinf = 20; % radius of the infinite ground
+rinf = 5; % radius of the infinite ground
 
 %Resistances
 Rs = ((1/(4*pi*ks))*((1/r1)-(1/(r2)))); % resistance of the steel layer
