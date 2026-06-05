@@ -82,4 +82,5 @@ length_to_storage=55000; %length of line to storage from the turbine
 length_to_office=1000; %length of line to offices from storage, range of 0-56000 
 resistivity=2.74e-8; %in ohm metres
 Area_powerline=0.00024; % in metres squared
+R_prime=resistivity/Area_powerline; %resistance per unit length
 Voltage=100000; %Grid voltage in volts
