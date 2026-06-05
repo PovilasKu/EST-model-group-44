@@ -53,7 +53,7 @@ d = 0.1; % insulation thickness (m) range: 0.05-1
 
 
 %Geometry
-V = ((EStorageMax*3.6e9)/(ro*c*(Tmax-Tground))); % volume of the tank (m^3) 
+V = ((EStorageMax)/(ro*c*(Tmax-Tground))); % volume of the tank (m^3) 
 r1 = ((3*V)/(4*pi))^(1/3); % inner radius of the tank (m)
 r2 = (r1+x); % radius of the tank + steel layer (m)
 r3 = (r2+d); % radius of the tank + steel + insulation layer (m)
