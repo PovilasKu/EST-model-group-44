@@ -29,7 +29,7 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 aSupplyTransport = 0.01; % Dissipation coefficient
 
 % injection system
-aInjection = 0.0; % Dissipation coefficient
+aInjection = 0.0; % Dissipation coefficient 
 
 % storage system
 EStorageMax     = 107.*unit("MWh"); % Maximum energy
@@ -72,7 +72,14 @@ bStorage = (1/(ro*V*c*Rtb))/unit("s");  % Storage dissipation coefficient
 
 
 % extraction system
-aExtraction = 0.6; % Dissipation coefficient
+aExtraction = 0.6; % Dissipation coefficient from the storage (converter efficiency)
 
 % transport to demand
-aDemandTransport = 0.01; % Dissipation coefficient
+aDemandTransport = 0.01; % Dissipation coefficient of the power line to Amsterdam
+
+%transport line efficiency calculations:
+length_to_storage=55000; %length of line to storage from the turbine 
+length_to_office=1000; %length of line to offices from storage, range of 0-56000 
+resistivity=2.74e-8; %in ohm metres
+Area_powerline=0.00024; % in metres squared
+Voltage=100000; %Grid voltage in volts
