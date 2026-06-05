@@ -37,9 +37,9 @@ EStorageMin     = 0.0*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
-ro = 997; % density of tank liquid (kg/m^3)
-c = 4184; % heat capacity of tank liquid (J/(kg*K)
-Tmax = 363.15; % maximum temperature of the liquid (K)
+ro = 2900; % density of basalt (kg/m^3)
+c = 1000; % heat capacity of tank liquid (J/(kg*K)
+Tmax = 1073.15; % maximum temperature of the basalt (K)
 Tground = 285.15; % ground temperature (K)
 Twater = 285.15; % water temperature (K)
 
@@ -53,7 +53,7 @@ d = 0.1; % insulation thickness (m) range: 0.05-1
 
 
 %Geometry
-V = ((EStorageMax*3.6e9)/(ro*c*(Tmax-Tground))); % volume of the tank (m^3) 
+V = ((EStorageMax)/(ro*c*(Tmax-Tground))); % volume of the tank (m^3) 
 r1 = ((3*V)/(4*pi))^(1/3); % inner radius of the tank (m)
 r2 = (r1+x); % radius of the tank + steel layer (m)
 r3 = (r2+d); % radius of the tank + steel + insulation layer (m)
