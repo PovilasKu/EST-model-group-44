@@ -75,12 +75,6 @@ Voltage=100; %Grid voltage (kV)
 % extraction system
 aExtraction = 0.4; % Dissipation coefficient from the storage (converter efficiency)
 
-% transport to demand
-aDemandTransport = 0.01; % Dissipation coefficient of the power line to Amsterdam
-
-
-% transport from supply
-aSupplyTransport = 0.01; % Dissipation coefficient of the power line to the storage
 
 % injection system
 aInjection = 0.2; % Dissipation coefficient (1-efficiency of heater)
