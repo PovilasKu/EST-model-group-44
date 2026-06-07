@@ -80,6 +80,11 @@ aExtraction = 0.4; % Dissipation coefficient from the storage (converter efficie
 aInjection = 0.2; % Dissipation coefficient (1-efficiency of heater)
 
 
+% Power line efficiencies (Theory session equation gives weird graphs)
+aDemandTransport = 0.6;
+
+aSupplyTransport = 0.6;
+
 %Storage dissipation coeficcient
 bStorage = (1/(ro*V*c*Rtb))/unit("s");  % Storage dissipation coefficient
 
