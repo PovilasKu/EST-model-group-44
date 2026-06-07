@@ -18,12 +18,12 @@ legend("Supply","Demand");
 
 %% Stored energy
 subplot(2,2,2);
-plot(tout/unit("day"), EStorage/unit("J"));
+plot(tout/unit("day"), T_hot);
 xlim([0 tout(end)/unit("day")]);
 grid on;
-title('Storage');
+title('Storage temperature');
 xlabel('Time [day]');
-ylabel('Energy [J]');
+ylabel('Temperature [K]');
 
 %% Energy losses
 subplot(2,2,3);
@@ -46,6 +46,18 @@ xlabel('Time [day]');
 ylabel('Power [W]');
 legend("Sell","Buy");
 
+
+
+
+%% Storage but energy
+figure;
+hold off;
+plot(tout/unit("day"), EStorage/unit("J"));
+xlim([0 tout(end)/unit("day")]);
+grid on;
+title('Storage energy');
+xlabel('Time [day]');
+ylabel('Temperature [J]');
 %% Pie charts
 
 % integrate the power signals in time
