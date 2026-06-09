@@ -18,7 +18,7 @@ legend("Supply","Demand");
 
 %% Stored energy
 subplot(2,2,2);
-plot(tout/unit("day"), T_hot);
+plot(tout/unit("day"), EStorage/((4*pi/3)*1000*2900*(3.4^3))+285.15);
 xlim([0 tout(end)/unit("day")]);
 grid on;
 title('Storage temperature');
@@ -57,7 +57,7 @@ xlim([0 tout(end)/unit("day")]);
 grid on;
 title('Storage energy');
 xlabel('Time [day]');
-ylabel('Temperature [J]');
+ylabel('Energy [J]');
 %% Pie charts
 
 % integrate the power signals in time
