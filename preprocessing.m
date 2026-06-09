@@ -46,7 +46,7 @@ Twater = 285.15; % water temperature (K)
 %Thermal coeficients and thicknesses
 ha = 50; % convective heat transfer coeficient of air (W/(m^2*K) range: 10-500
 ks = 15; % conductive heat transfer coeficient of steel (W/(m*K)
-ki = 0.05; % conductive heat transfer coeficient of insulation (W/(m*K) range:0.02-0.05
+ki = 0.032; % conductive heat transfer coeficient of insulation (W/(m*K) range:0.02-0.05
 kg = 1; % conductive heat transfer coeficient of ground (W/(m*K)
 x = 0.2; % shell thickness (m) range: 0.1-1
 d = 0.1; % insulation thickness (m) range: 0.05-1
