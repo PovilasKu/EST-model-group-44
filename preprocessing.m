@@ -58,7 +58,7 @@ Rs = ((1/(4*pi*ks))*((1/r1)-(1/(r2)))); % resistance of the steel layer (K/W)
 Ri = ((1/(4*pi*ki))*((1/(r2))-(1/(r3)))); % resistance of the insulation layer (K/W)
 Rc = ((1/(4*pi*kg))*((1/r3)-(1/rinf))); % resistance of the ground (K/W)
 Ra = ((1/(4*pi*ha*r3))); % Resistance of the surface when sphere is outside (K/W)
-Rtb = (Rs+Ri+Rc); % total resitance for burried tank (K/W)
+Rtb = (Rs+Ri+Rc); % total resitance for buried tank (K/W)
 Rto = (Rs+Ri+Ra); % total resistance for outside tank (K/W)
 
 

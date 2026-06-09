@@ -72,7 +72,7 @@ EDirect              = EfromSupplyTransport - ESell - EtoInjection;
 ESurplus             = EtoInjection-EfromExtraction-EStorageDissipation;
 
 figure;
-tiles = tiledlayout(1,2);
+tiles = tiledlayout(1,3);
 
 ax = nexttile;
 pie(ax, [EDirect, EtoInjection, ESell]/EfromSupplyTransport);
@@ -85,3 +85,9 @@ pie(ax, [EDirect, EfromExtraction, EBuy]/EtoDemandTransport);
 lgd = legend({"Direct from supply", "From storage", "Bought"});
 lgd.Layout.Tile = "south";
 title(sprintf("Delivered energy %3.2e [J]", EtoDemandTransport/unit('J')));
+
+ax = nexttile;
+pie(ax, [DTransport, DStorage]);
+lgd = legend({"Power line storage losses", "Heat loss due to the thermal energy storage system"});
+lgd.Layour.Title = "south";
+title(sprintf("Distribution of energy lost %3.2e [J]", D/unit('J')));
