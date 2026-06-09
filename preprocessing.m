@@ -25,12 +25,6 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 %% System parameters
 
-% transport from supply
-aSupplyTransport = 0.01; % Dissipation coefficient
-
-% injection system
-aInjection = 0.0; % Dissipation coefficient
-
 % storage system
 EStorageMax     = 107.*unit("MWh"); % Maximum energy
 EStorageMin     = 0.0*unit("MWh"); % Minimum energy
@@ -67,12 +61,30 @@ Ra = ((1/(4*pi*ha*r3))); % Resistance of the surface when sphere is outside (K/W
 Rtb = (Rs+Ri+Rc); % total resitance for burried tank (K/W)
 Rto = (Rs+Ri+Ra); % total resistance for outside tank (K/W)
 
+
+%transport line efficiency calculations:
+length_to_storage=55; %length of line to storage from the turbine (km)
+length_to_office=1; %length of line to offices from storage (km) (0-56) 
+resistivity=2.74e-8; %in ohm metres
+Area_powerline=0.00024; % in metres squared
+R_prime=(resistivity/Area_powerline)*1000000; %resistance per unit length (mOhm/km)
+Voltage=100; %Grid voltage (kV)
+
+%% Dissipation coefficients
+
+% extraction system
+aExtraction = 0.4; % Dissipation coefficient from the storage (converter efficiency)
+
+
+% injection system
+aInjection = 0.2; % Dissipation coefficient (1-efficiency of heater)
+
+
+% Power line efficiencies (Theory session equation gives weird graphs)
+aDemandTransport = 0.6;
+
+aSupplyTransport = 0.6;
+
 %Storage dissipation coeficcient
 bStorage = (1/(ro*V*c*Rtb))/unit("s");  % Storage dissipation coefficient
 
-
-% extraction system
-aExtraction = 0.6; % Dissipation coefficient
-
-% transport to demand
-aDemandTransport = 0.01; % Dissipation coefficient
