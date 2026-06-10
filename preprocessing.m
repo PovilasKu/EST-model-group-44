@@ -27,7 +27,7 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 % storage system
 EStorageMax     = 107.*unit("MWh"); % Maximum energy
-EStorageMin     = 0.0*unit("MWh"); % Minimum energy
+EStorageMin     = 0.1*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
@@ -63,9 +63,6 @@ Rto = (Rs+Ri+Ra); % total resistance for outside tank (K/W)
 
 
 %% Dissipation coefficients
-
-% extraction system
-aExtraction = 0.4; % Dissipation coefficient from the storage (converter efficiency)
 
 
 % injection system
