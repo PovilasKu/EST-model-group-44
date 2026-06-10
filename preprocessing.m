@@ -73,9 +73,9 @@ aInjection = 0.2; % Dissipation coefficient (1-efficiency of heater)
 
 
 % Power line dissipation coefficients
-aDemandTransport = 0.6;
+aDemandTransport = 0.01;
 
-aSupplyTransport = 0.6;
+aSupplyTransport = 0.01;
 
 %Storage dissipation coeficcient
 bStorage = (1/(ro*V*c*Rtb))/unit("s");  % Storage dissipation coefficient
