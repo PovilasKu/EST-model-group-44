@@ -31,9 +31,9 @@ EStorageMin     = 0.1*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
-ro = 2900; % density of basalt (kg/m^3)
-c = 1000; % heat capacity of tank liquid (J/(kg*K)
-Tmax = 1073.15; % maximum temperature of the basalt (K)
+ro = 1000; % density of basalt (kg/m^3)
+c = 4200; % heat capacity of tank liquid (J/(kg*K)
+Tmax = 373.15; % maximum temperature of the basalt (K)
 Tground = 285.15; % ground temperature (K)
 Twater = 285.15; % water temperature (K)
 
