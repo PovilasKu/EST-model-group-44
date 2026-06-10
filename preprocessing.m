@@ -31,9 +31,9 @@ EStorageMin     = 0.1*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
-ro = 1000; % density of basalt (kg/m^3)
-c = 4200; % heat capacity of tank liquid (J/(kg*K)
-Tmax = 373.15; % maximum temperature of the basalt (K)
+ro = 2800; % density of basalt (kg/m^3)
+c = 1000; % heat capacity of tank liquid (J/(kg*K)
+Tmax = 1073.15; % maximum temperature of the basalt (K)
 Tground = 285.15; % ground temperature (K)
 Twater = 285.15; % water temperature (K)
 
@@ -42,7 +42,7 @@ ha = 50; % convective heat transfer coeficient of air (W/(m^2*K) range: 10-500
 ks = 15; % conductive heat transfer coeficient of steel (W/(m*K)
 ki = 0.032; % conductive heat transfer coeficient of insulation (W/(m*K) range:0.02-0.05
 kg = 1; % conductive heat transfer coeficient of ground (W/(m*K)
-x = 0.2; % shell thickness (m) range: 0.1-1
+x = 0.1; % shell thickness (m) range: 0.1-1
 d = 0.1; % insulation thickness (m) range: 0.05-1
 
 
@@ -51,7 +51,7 @@ V = ((EStorageMax)/(ro*c*(Tmax-Tground))); % volume of the tank (m^3)
 r1 = ((3*V)/(4*pi))^(1/3); % inner radius of the tank (m)
 r2 = (r1+x); % radius of the tank + steel layer (m)
 r3 = (r2+d); % radius of the tank + steel + insulation layer (m)
-rinf = 5; % radius of the infinite ground (m)
+rinf = 10; % radius of the infinite ground (m)
 
 %Resistances
 Rs = ((1/(4*pi*ks))*((1/r1)-(1/(r2)))); % resistance of the steel layer (K/W)
