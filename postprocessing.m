@@ -86,3 +86,59 @@ lgd = legend({"Direct from supply", "From storage", "Bought"});
 lgd.Layout.Tile = "south";
 title(sprintf("Delivered energy %3.2e [J]", EtoDemandTransport/unit('J')));
 
+
+%% LOSS CALCULATIONS
+
+% Storage losses
+EStorageLoss = trapz(tout, DStorage);
+
+% Injection losses
+EInjectionLoss = trapz(tout, aInjection * PtoInjection);
+
+% Extraction losses
+EExtractionLoss = trapz(tout, D_extraction);
+
+% Supply transport losses
+ESupplyTransportLoss = trapz(tout, ...
+    aSupplyTransport * PSupply);
+
+% Demand transport losses
+EDemandTransportLoss = trapz(tout, ...
+    aDemandTransport * PtoDemandTransport);
+
+% Total losses
+ETotalLoss = ...
+    EStorageLoss + ...
+    EInjectionLoss + ...
+    EExtractionLoss + ...
+    ESupplyTransportLoss + ...
+    EDemandTransportLoss;
+
+%% Maximum allowed losses
+
+allowedLossFraction = 0.05; % 5%
+
+E_loss_max = allowedLossFraction * EStorageMax;
+
+%% Requirement check
+
+if ETotalLoss <= E_loss_max
+    fprintf('Requirement satisfied\n');
+else
+    fprintf('Requirement NOT satisfied\n');
+end
+
+%% Print results
+
+fprintf('\n===== LOSS ANALYSIS =====\n');
+
+fprintf('Storage losses:          %.3e J\n', EStorageLoss);
+fprintf('Injection losses:        %.3e J\n', EInjectionLoss);
+fprintf('Extraction losses:       %.3e J\n', EExtractionLoss);
+fprintf('Supply transport losses: %.3e J\n', ESupplyTransportLoss);
+fprintf('Demand transport losses: %.3e J\n', EDemandTransportLoss);
+
+fprintf('--------------------------------\n');
+
+fprintf('Total system losses:     %.3e J\n', ETotalLoss);
+fprintf('Maximum allowed losses:  %.3e J\n', E_loss_max);
