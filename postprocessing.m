@@ -142,3 +142,34 @@ fprintf('--------------------------------\n');
 
 fprintf('Total system losses:     %.3e J\n', ETotalLoss);
 fprintf('Maximum allowed losses:  %.3e J\n', E_loss_max);
+
+
+%% Loss pie chart
+
+figure;
+
+Losses = [
+    EStorageLoss ...
+    EInjectionLoss ...
+    EExtractionLoss ...
+    ESupplyTransportLoss ...
+    EDemandTransportLoss
+];
+
+% Avoid issues with exact zeros
+LossesPlot = Losses;
+LossesPlot(LossesPlot == 0) = eps;
+
+labels = {
+    'Storage losses'
+    'Injection losses'
+    'Extraction losses'
+    'Supply transport losses'
+    'Demand transport losses'
+};
+
+pie(LossesPlot);
+
+legend(labels, 'Location', 'southoutside');
+
+title(sprintf('Total losses = %.3e J', ETotalLoss));
