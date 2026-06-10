@@ -86,8 +86,4 @@ lgd = legend({"Direct from supply", "From storage", "Bought"});
 lgd.Layout.Tile = "south";
 title(sprintf("Delivered energy %3.2e [J]", EtoDemandTransport/unit('J')));
 
-ax = nexttile;
-pie(ax, [DTransport, DStorage]);
-lgd = legend({"Power line storage losses", "Heat loss due to the thermal energy storage system"});
-lgd.Layour.Title = "south";
-title(sprintf("Distribution of energy lost %3.2e [J]", D/unit('J')));
+
