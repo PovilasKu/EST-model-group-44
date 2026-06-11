@@ -173,3 +173,6 @@ pie(LossesPlot);
 legend(labels, 'Location', 'southoutside');
 
 title(sprintf('Total losses = %.3e J', ETotalLoss));
+
+fprintf('bStorage = %.6e 1/s\n', bStorage);
+fprintf('tau = %.2f days\n', 1/bStorage/86400);
