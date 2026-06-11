@@ -90,7 +90,7 @@ title(sprintf("Delivered energy %3.2e [J]", EtoDemandTransport/unit('J')));
 %% LOSS CALCULATIONS
 
 % Storage losses
-EStorageLoss = trapz(tout, DStorage);
+EStorageLoss = trapz(tout, DstorageOnly);
 
 % Injection losses
 EInjectionLoss = trapz(tout, aInjection * PtoInjection);
