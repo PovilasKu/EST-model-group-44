@@ -31,9 +31,9 @@ EStorageMin     = 0.1*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
-ro = 2800; % density of basalt (kg/m^3)
-c = 1000; % heat capacity of tank liquid (J/(kg*K)
-Tmax = 1073.15; % maximum temperature of the basalt (K)
+ro = 1000; % density of basalt (kg/m^3)
+c = 4180; % heat capacity of tank liquid (J/(kg*K)
+Tmax = 373.15; % maximum temperature of the basalt (K)
 Tground = 285.15; % ground temperature (K)
 Twater = 285.15; % water temperature (K)
 
@@ -75,5 +75,5 @@ aDemandTransport = 0.01;
 aSupplyTransport = 0.01;
 
 %Storage dissipation coeficcient
-bStorage = (1/(ro*V*c*Rtb))/unit("s");  % Storage dissipation coefficient
+bStorage = (1/(ro*V*c*Rto))/unit("s");  % Storage dissipation coefficient
 

@@ -100,11 +100,11 @@ EExtractionLoss = trapz(tout, D_extraction);
 
 % Supply transport losses
 ESupplyTransportLoss = trapz(tout, ...
-    aSupplyTransport * PSupply);
+    aSupplyTransport * PtoSupplyTransport);
 
 % Demand transport losses
 EDemandTransportLoss = trapz(tout, ...
-    aDemandTransport * PtoDemandTransport);
+    aDemandTransport * PfromDemandTransport);
 
 % Total losses
 ETotalLoss = ...
