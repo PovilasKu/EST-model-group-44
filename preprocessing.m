@@ -31,9 +31,9 @@ EStorageMin     = 0.1*unit("MWh"); % Minimum energy
 EStorageInitial = 0.0*unit("MWh"); % Initial energy
 
 %General parameters
-ro = 1000; % density of basalt (kg/m^3)
-c = 4180; % heat capacity of tank liquid (J/(kg*K)
-Tmax = 373.15; % maximum temperature of the basalt (K)
+ro = 2900; % density of basalt (kg/m^3)
+c = 1000; % heat capacity of tank liquid (J/(kg*K)
+Tmax = 1073.15; % maximum temperature of the basalt (K)
 Tground = 285.15; % ground temperature (K)
 Twater = 285.15; % water temperature (K)
 
@@ -43,7 +43,7 @@ ks = 15; % conductive heat transfer coeficient of steel (W/(m*K)
 ki = 0.032; % conductive heat transfer coeficient of insulation (W/(m*K) range:0.02-0.05
 kg = 1; % conductive heat transfer coeficient of ground (W/(m*K)
 x = 0.1; % shell thickness (m) range: 0.05-1
-d = 0.1; % insulation thickness (m) range: 0.05-1
+d = 0.071; % insulation thickness (m) range: 0.05-1
 
 
 %Geometry
@@ -75,5 +75,5 @@ aDemandTransport = 0.01;
 aSupplyTransport = 0.01;
 
 %Storage dissipation coeficcient
-bStorage = (1/(ro*V*c*Rto))/unit("s");  % Storage dissipation coefficient
+bStorage = (1/(ro*V*c*Rtb))/unit("s");  % Storage dissipation coefficient
 
